@@ -15,7 +15,7 @@ Here’s what I learned ⚡
 Room: [What is Networking](https://tryhackme.com/room/whatisnetworking)  
 Path: Pre-Security
 
-**Goal:** Understand how devices communicate across a network and the core components that make it work (nodes, packets, protocols, routers, IP addresses).
+**Goal:** Explore how computers, routers, and other devices communicate to form the networks we use every day.
 
 <h2>$ mission log <span class="cursor"></span></h2>
 
@@ -27,4 +27,5 @@ Seeing the flow made networking click for me:
 ```bash
 # simplified data path
 My_Computer --> Home_Router --> Internet --> Remote_Server --> Back_to_Me
+
 ```
