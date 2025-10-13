@@ -62,9 +62,7 @@ You can ping local devices or websites. It’s built into Linux, macOS, and Wind
 
 **Syntax:**
 
-```bash
 ping <IP-address-or-hostname>
-
 
 <h2>$ history : nutshell <span class="cursor"></span></h2>
 1960s → ARPANET (first computer network)
@@ -73,4 +71,3 @@ Today → Billions of networks linked into the Internet
 
 <h2>$ cyber takeaway <span class="cursor"></span></h2>
 Understanding how devices identify and connect is the foundation of cybersecurity.
-```
