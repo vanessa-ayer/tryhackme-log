@@ -12,7 +12,7 @@ Here’s what I learned:
 
 <h2>$ mission brief <span class="cursor"></span></h2>
 
-Room: [What is Networking](https://tryhackme.com/room/whatisnetworking)  
+Room: [What is Networking?](https://tryhackme.com/room/whatisnetworking)  
 Path: Pre-Security
 
 **Goal:** Explore how computers, routers, and other devices communicate to form the networks we use every day.
