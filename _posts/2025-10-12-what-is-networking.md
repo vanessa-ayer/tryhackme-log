@@ -66,7 +66,7 @@ You can ping local devices or websites. It’s built into Linux, macOS, and Wind
 ping IP-address-or-website-URL
 ```
 
-<h2>$ history : nutshell <span class="cursor"></span></h2>
+<h2>$ history <span class="cursor"></span></h2>
 
 • 1960s → ARPANET (first computer network)
 
