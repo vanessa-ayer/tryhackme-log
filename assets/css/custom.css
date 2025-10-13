@@ -186,7 +186,7 @@ code {
 	text-align: left;
 	margin-top: 40px;
 	font-family: 'Source Code Pro', monospace;
-	white-space: pre; /* preserves spaces like a terminal */
+	white-space: normal; /* preserves spaces like a terminal */
 }
 
 .return-link a {
