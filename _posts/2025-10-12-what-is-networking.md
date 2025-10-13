@@ -31,13 +31,13 @@ The Internet = billions of small networks connected so data can move worldwide.
 
 <h2>$ device identity <span class="cursor"></span></h2>
 
-| Human       | Device                         |
-| :---------- | :----------------------------- |
-| Name        | IP address (can change)        |
-| Fingerprint | MAC address (hardware, stable) |
+| Human       | Device                                               |
+| :---------- | :--------------------------------------------------- |
+| Name        | IP address (**network-assigned digital identifier**) |
+| Fingerprint | MAC address (**physical hardware ID**)               |
 
-**IP** = temporary address for communications  
-**MAC** = permanent hardware fingerprint
+**IP** → network-assigned identifier that helps route data between devices.  
+**MAC** → physical identifier tied to the device’s network interface card (NIC).
 
 > Note: MAC addresses can be spoofed, so MAC filtering alone is not a secure control.
 
@@ -67,9 +67,13 @@ ping IP-address-or-website-URL
 ```
 
 <h2>$ history : nutshell <span class="cursor"></span></h2>
+
 • 1960s → ARPANET (first computer network)
+
 • 1989 → World Wide Web (Tim Berners-Lee)
+
 • Today → Billions of networks linked into the Internet
 
 <h2>$ cyber takeaway <span class="cursor"></span></h2>
+
 Understanding how devices identify and connect is the foundation of cybersecurity.
