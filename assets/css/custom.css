@@ -141,3 +141,16 @@ code {
 	color: var(--muted);
 	margin-left: 6px;
 }
+
+/* Custom post-meta style */
+.post-meta {
+	font-family: 'Source Code Pro', monospace;
+	color: var(--muted);
+	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.post-meta .author {
+	color: var(--accent);
+}

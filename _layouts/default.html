@@ -24,7 +24,13 @@
 				</div>
 			</header>
 
-			<main class="site-content">{{ content }}</main>
+			<main class="site-content">
+				{% if page.layout == "post" %}
+				<p class="post-meta">
+					$ logged by <span class="author">Vanessa Ayer</span>
+				</p>
+				{% endif %} {{ content }}
+			</main>
 
 			<footer class="site-footer">
 				<p>Made by Vanessa • <small>TryHackMe Journey</small></p>
