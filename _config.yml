@@ -4,3 +4,4 @@ theme: jekyll-theme-hacker
 markdown: kramdown
 baseurl: '/tryhackme-log' # because this is a project site
 url: 'https://vanessa-ayer.github.io'
+author: 'Vanessa Ayer'
