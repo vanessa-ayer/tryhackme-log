@@ -14,7 +14,9 @@ Here’s what I learned:
 
 Room: [What is Networking?](https://tryhackme.com/room/whatisnetworking)  
 Path: Pre-Security
-**Goal:** Explore how computers, routers, and other devices communicate to form the networks we use every day.
+
+**Goal:**
+Explore how computers, routers, and other devices communicate to form the networks we use every day.
 
 <h2>$ mission log <span class="cursor"></span></h2>
 
