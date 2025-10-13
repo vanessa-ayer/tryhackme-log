@@ -1,6 +1,6 @@
 title: 'TryHackMe Journey Log'
 description: 'Documenting my adventures through virtual machines, puzzles, and the art of cybersecurity.'
-theme: jekyll-theme-hacker
+# theme: jekyll-theme-hacker
 markdown: kramdown
 baseurl: '/tryhackme-log' # because this is a project site
 url: 'https://vanessa-ayer.github.io'
