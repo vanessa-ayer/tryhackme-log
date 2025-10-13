@@ -34,7 +34,13 @@
 				<hr class="divider" />
 
 				<p class="return-link">
-					<a href="{{ site.baseurl }}/">&lt; return to mission log</a>
+					<a href="{{ site.baseurl }}/" aria-label="Return to mission log">
+						<span
+							class="type-target"
+							data-text="&lt; return to mission log"
+						></span>
+						<span class="cursor"></span>
+					</a>
 				</p>
 			</main>
 
@@ -42,5 +48,22 @@
 				<p>Made by Vanessa • <small>TryHackMe Journey</small></p>
 			</footer>
 		</div>
+		<script>
+			(function () {
+				var t = document.querySelector('.return-link .type-target');
+				if (!t) return;
+
+				var full = t.getAttribute('data-text') || '';
+				var i = 0;
+
+				// start typing after a brief pause
+				setTimeout(function type() {
+					t.textContent = full.slice(0, i++);
+					if (i <= full.length) {
+						setTimeout(type, 35); // typing speed (ms per char) — tweak to taste
+					}
+				}, 800);
+			})();
+		</script>
 	</body>
 </html>

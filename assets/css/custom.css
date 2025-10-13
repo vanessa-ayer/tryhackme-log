@@ -180,3 +180,30 @@ code {
 	border-top: 1px dashed rgba(156, 255, 107, 0.25);
 	margin: 50px 0 20px;
 }
+
+/* --- typing link polish --- */
+.return-link {
+	text-align: left;
+	margin-top: 40px;
+	font-family: 'Source Code Pro', monospace;
+	white-space: pre; /* preserves spaces like a terminal */
+}
+
+.return-link a {
+	text-decoration: none;
+	color: var(--fg);
+}
+
+.return-link .type-target {
+	color: var(--accent);
+	text-shadow: 0 0 6px rgba(0, 255, 0, 0.15);
+}
+
+/* keep the cursor aligned with text */
+.return-link .cursor {
+	width: 10px;
+	height: 1em;
+	display: inline-block;
+	vertical-align: -2px;
+	margin-left: 2px;
+}
