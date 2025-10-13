@@ -62,12 +62,14 @@ You can ping local devices or websites. It’s built into Linux, macOS, and Wind
 
 **Syntax:**
 
-ping <IP-address-or-hostname>
+```bash
+ping IP-address-or-website-URL
+```
 
 <h2>$ history : nutshell <span class="cursor"></span></h2>
-1960s → ARPANET (first computer network)
-1989  → World Wide Web (Tim Berners-Lee)
-Today → Billions of networks linked into the Internet
+• 1960s → ARPANET (first computer network)
+• 1989 → World Wide Web (Tim Berners-Lee)
+• Today → Billions of networks linked into the Internet
 
 <h2>$ cyber takeaway <span class="cursor"></span></h2>
 Understanding how devices identify and connect is the foundation of cybersecurity.
