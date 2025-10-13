@@ -154,3 +154,29 @@ code {
 .post-meta .author {
 	color: var(--accent);
 }
+
+/* --- return link at bottom of posts --- */
+.return-link {
+	text-align: left;
+	margin-top: 40px;
+	font-family: 'Source Code Pro', monospace;
+}
+
+.return-link a {
+	color: var(--accent);
+	text-decoration: none;
+	border-bottom: 1px dotted rgba(156, 255, 107, 0.3);
+	transition: all 0.2s ease;
+}
+
+.return-link a:hover {
+	text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+	border-bottom: 1px solid var(--accent);
+}
+
+/* subtle horizontal line */
+.divider {
+	border: none;
+	border-top: 1px dashed rgba(156, 255, 107, 0.25);
+	margin: 50px 0 20px;
+}
