@@ -100,3 +100,44 @@ code {
 		width: 100%;
 	}
 }
+
+/* --- homepage post list: terminal vibe --- */
+.post-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 12px 0 28px;
+	font-family: 'Source Code Pro', Consolas, monospace;
+	font-size: 16px;
+}
+
+.post-list li {
+	margin: 8px 0;
+	position: relative;
+	padding-left: 22px;
+}
+
+.post-list li::before {
+	content: '>'; /* terminal-style prompt */
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: var(--accent);
+	text-shadow: 0 0 6px rgba(0, 255, 0, 0.15);
+}
+
+.post-list a {
+	text-decoration: none;
+	color: var(--fg);
+	border-bottom: 1px dotted rgba(156, 255, 107, 0.35);
+}
+
+.post-list a:hover {
+	color: var(--accent);
+	border-bottom: 1px solid var(--accent);
+	text-shadow: 0 0 6px rgba(0, 255, 0, 0.18);
+}
+
+.post-list small {
+	color: var(--muted);
+	margin-left: 6px;
+}
