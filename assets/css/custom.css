@@ -207,3 +207,20 @@ code {
 	vertical-align: -2px;
 	margin-left: 2px;
 }
+
+/* --- Terminal glow for code + bullet blocks --- */
+pre {
+	color: var(--accent);
+	background: rgba(0, 255, 0, 0.05);
+	border-radius: 6px;
+	padding: 8px 10px;
+	font-family: 'Source Code Pro', monospace;
+	line-height: 1.5;
+	overflow-x: auto;
+}
+
+pre::before {
+	content: '> ';
+	color: var(--accent);
+	opacity: 0.4;
+}
