@@ -53,9 +53,15 @@ body,
 	max-width: 900px;
 }
 
+/* Align blinking cursors and text for title + headers */
 h1.title .type-target,
-h1.title .cursor {
+h2.type-header .type-target,
+h1.title .cursor,
+h2.type-header .cursor {
 	display: inline-block;
+	vertical-align: baseline;
+	position: relative;
+	top: -2px; /* adjust if cursor sits too high or low */
 }
 
 h1,
@@ -73,6 +79,23 @@ code {
 	padding: 8px;
 	border-radius: 6px;
 	overflow-x: auto;
+}
+
+/* --- Terminal glow for code + bullet blocks --- */
+pre {
+	color: var(--accent);
+	background: rgba(0, 255, 0, 0.05);
+	border-radius: 6px;
+	padding: 8px 10px;
+	font-family: 'Source Code Pro', monospace;
+	line-height: 1.5;
+	overflow-x: auto;
+}
+
+pre::before {
+	content: '> ';
+	color: var(--accent);
+	opacity: 0.4;
 }
 
 /* --- homepage post list: terminal vibe --- */
@@ -180,23 +203,6 @@ code {
 	display: inline-block;
 	vertical-align: -2px;
 	margin-left: 2px;
-}
-
-/* --- Terminal glow for code + bullet blocks --- */
-pre {
-	color: var(--accent);
-	background: rgba(0, 255, 0, 0.05);
-	border-radius: 6px;
-	padding: 8px 10px;
-	font-family: 'Source Code Pro', monospace;
-	line-height: 1.5;
-	overflow-x: auto;
-}
-
-pre::before {
-	content: '> ';
-	color: var(--accent);
-	opacity: 0.4;
 }
 
 .cursor {
