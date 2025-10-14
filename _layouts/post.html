@@ -25,7 +25,10 @@
 			</header>
 
 			<main class="site-content">
-				<h1>{{ page.title }}</h1>
+				<h1 class="type-header title" data-text="{{ page.title }}">
+					<span class="type-target"></span><span class="cursor"></span>
+				</h1>
+
 				<p class="post-meta">
 					$ logged by <span class="author">Vanessa Ayer</span>
 				</p>
@@ -50,19 +53,62 @@
 		</div>
 		<script>
 			(function () {
-				var t = document.querySelector('.return-link .type-target');
-				if (!t) return;
+				// typing config
+				var initialDelay = 300; // delay before first header starts
+				var betweenDelay = 220; // pause between finishing one header and starting next
+				var speedPerChar = 28; // typing speed (ms per character)
+				var exitDelay = 600; // pause before typing < exit room> after last header
 
-				var full = t.getAttribute('data-text') || '';
-				var i = 0;
+				// grab ALL typed headers (title first, then h2s) in DOM order
+				var headers = Array.prototype.slice.call(
+					document.querySelectorAll('.type-header')
+				);
 
-				// start typing after a brief pause
-				setTimeout(function type() {
-					t.textContent = full.slice(0, i++);
-					if (i <= full.length) {
-						setTimeout(type, 60); // typing speed (ms per char) — tweak to taste
+				// also grab the footer return link (exit room)
+				var exitLink = document.querySelector('.return-link .type-target');
+
+				function typeOne(el, done) {
+					var target = el.querySelector('.type-target');
+					var text = el.getAttribute('data-text') || '';
+					var i = 0;
+
+					if (!target) return done && done();
+
+					(function tick() {
+						target.textContent = text.slice(0, i++);
+						if (i <= text.length) {
+							setTimeout(tick, speedPerChar);
+						} else {
+							setTimeout(done, betweenDelay);
+						}
+					})();
+				}
+
+				function typeSequence(items, idx) {
+					if (idx >= items.length) {
+						// all headers done → trigger < exit room >
+						if (exitLink) {
+							setTimeout(function () {
+								var full = exitLink.getAttribute('data-text') || '';
+								var i = 0;
+								(function tickExit() {
+									exitLink.textContent = full.slice(0, i++);
+									if (i <= full.length) setTimeout(tickExit, speedPerChar);
+								})();
+							}, exitDelay);
+						}
+						return;
 					}
-				}, 1000);
+					typeOne(items[idx], function () {
+						typeSequence(items, idx + 1);
+					});
+				}
+
+				if (headers.length) {
+					setTimeout(function () {
+						typeSequence(headers, 0);
+					}, initialDelay);
+				}
 			})();
 		</script>
 	</body>

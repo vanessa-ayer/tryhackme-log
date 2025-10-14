@@ -52,12 +52,19 @@ body,
 	margin-top: 14px;
 	max-width: 900px;
 }
+
+h1.title .type-target,
+h1.title .cursor {
+	display: inline-block;
+}
+
 h1,
 h2,
 h3 {
 	color: var(--accent);
 	text-shadow: 0 0 6px rgba(0, 255, 0, 0.08);
 }
+
 pre,
 code {
 	background: #000;
@@ -66,39 +73,6 @@ code {
 	padding: 8px;
 	border-radius: 6px;
 	overflow-x: auto;
-}
-.cursor {
-	display: inline-block;
-	width: 10px;
-	height: 16px;
-	background: var(--accent);
-	margin-left: 6px;
-	animation: blink 1s steps(2, start) infinite;
-	vertical-align: bottom;
-}
-@keyframes blink {
-	50% {
-		opacity: 0;
-	}
-}
-@keyframes flicker {
-	0% {
-		opacity: 0.99;
-	}
-	50% {
-		opacity: 0.94;
-	}
-	100% {
-		opacity: 0.99;
-	}
-}
-.site {
-	animation: flicker 8s infinite;
-}
-@media (max-width: 640px) {
-	.xpbar {
-		width: 100%;
-	}
 }
 
 /* --- homepage post list: terminal vibe --- */
@@ -223,4 +197,38 @@ pre::before {
 	content: '> ';
 	color: var(--accent);
 	opacity: 0.4;
+}
+
+.cursor {
+	display: inline-block;
+	width: 10px;
+	height: 16px;
+	background: var(--accent);
+	margin-left: 6px;
+	animation: blink 1s steps(2, start) infinite;
+	vertical-align: bottom;
+}
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+@keyframes flicker {
+	0% {
+		opacity: 0.99;
+	}
+	50% {
+		opacity: 0.94;
+	}
+	100% {
+		opacity: 0.99;
+	}
+}
+.site {
+	animation: flicker 8s infinite;
+}
+@media (max-width: 640px) {
+	.xpbar {
+		width: 100%;
+	}
 }
