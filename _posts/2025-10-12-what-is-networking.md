@@ -26,14 +26,18 @@ Explore how computers, routers, and other devices communicate to form the networ
 
 Networking keeps the digital world alive. Every message, stream, and file is just **data moving between devices** using shared rules (protocols).
 
-<h2>$ internet : network of networks <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ internet : network of networks">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 Alice links Bob, Jim, Zayn and Toby — she becomes the connector/translator.  
 The Internet = billions of small networks connected so data can move worldwide.
 
 ---
 
-<h2>$ device identity <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ device identity">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 | Human       | Device                                               |
 | :---------- | :--------------------------------------------------- |
@@ -47,7 +51,9 @@ The Internet = billions of small networks connected so data can move worldwide.
 
 ---
 
-<h2>$ ipv4 vs ipv6 <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ ipv4 vs ipv6">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 | Version | Quick                                  |
 | :------ | :------------------------------------- |
@@ -56,7 +62,9 @@ The Internet = billions of small networks connected so data can move worldwide.
 
 ---
 
-<h2>$ ping : basic check <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ ping : basic check">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 Ping is one of the most fundamental network tools available to us.  
 It uses **ICMP (Internet Control Message Protocol)** packets to measure how reliable a connection is between two devices.
@@ -70,7 +78,9 @@ You can ping local devices or websites. It’s built into Linux, macOS, and Wind
 ping IP-address-or-website-URL
 ```
 
-<h2>$ history <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ history ">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 • 1960s → ARPANET (first computer network)
 
@@ -78,6 +88,8 @@ ping IP-address-or-website-URL
 
 • Today → Billions of networks linked into the Internet
 
-<h2>$ cyber takeaway <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ cyber takeaway">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 Understanding how devices identify and connect is the foundation of cybersecurity.
