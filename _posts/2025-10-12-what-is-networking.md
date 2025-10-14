@@ -8,8 +8,6 @@ This week I started my **TryHackMe Pre-Security path**, and I’m completely hoo
 Every challenge feels like leveling up in a game, and today’s quest, **“What is Networking”** was such a fun introduction to how devices communicate across the Internet.  
 I wrapped up the room feeling like I just unlocked the first big piece of the puzzle, and honestly, I’m obsessed.
 
-Here’s what I learned:
-
 <h2 class="type-header" data-text="$ mission brief">
   <span class="type-target"></span><span class="cursor"></span>
 </h2>
