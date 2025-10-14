@@ -53,62 +53,110 @@
 		</div>
 		<script>
 			(function () {
-				// typing config
-				var initialDelay = 300; // delay before first header starts
-				var betweenDelay = 220; // pause between finishing one header and starting next
-				var speedPerChar = 28; // typing speed (ms per character)
-				var exitDelay = 600; // pause before typing < exit room> after last header
+				// --- config you can tweak ---
+				var speedPerChar = 28; // ms per character (higher = slower)
+				var triggerEarly = '0px 0px -20% 0px'; // starts typing when 80% into viewport
+				var exitSpeedPerChar = 28;
 
-				// grab ALL typed headers (title first, then h2s) in DOM order
-				var headers = Array.prototype.slice.call(
-					document.querySelectorAll('.type-header')
-				);
-
-				// also grab the footer return link (exit room)
-				var exitLink = document.querySelector('.return-link .type-target');
-
-				function typeOne(el, done) {
-					var target = el.querySelector('.type-target');
-					var text = el.getAttribute('data-text') || '';
+				// Typing helper
+				function typeText(target, text, speed, done) {
 					var i = 0;
-
-					if (!target) return done && done();
-
 					(function tick() {
 						target.textContent = text.slice(0, i++);
 						if (i <= text.length) {
-							setTimeout(tick, speedPerChar);
+							setTimeout(tick, speed);
 						} else {
-							setTimeout(done, betweenDelay);
+							done && done();
 						}
 					})();
 				}
 
-				function typeSequence(items, idx) {
-					if (idx >= items.length) {
-						// all headers done → trigger < exit room >
-						if (exitLink) {
-							setTimeout(function () {
-								var full = exitLink.getAttribute('data-text') || '';
-								var i = 0;
-								(function tickExit() {
-									exitLink.textContent = full.slice(0, i++);
-									if (i <= full.length) setTimeout(tickExit, speedPerChar);
-								})();
-							}, exitDelay);
-						}
+				// Find headers to type (title + all section headers you marked up)
+				var headers = [].slice.call(document.querySelectorAll('.type-header'));
+
+				// Observe each header; type once on first view, new update
+				function observeHeaders() {
+					if (!('IntersectionObserver' in window)) {
+						// Fallback: type all immediately
+						headers.forEach(function (h) {
+							var tgt = h.querySelector('.type-target');
+							if (!tgt) return;
+							typeText(tgt, h.getAttribute('data-text') || '', speedPerChar);
+						});
+						typeExitIfPresent(); // also type exit link
 						return;
 					}
-					typeOne(items[idx], function () {
-						typeSequence(items, idx + 1);
+
+					var seen = new WeakSet();
+					var io = new IntersectionObserver(
+						function (entries) {
+							entries.forEach(function (entry) {
+								if (entry.isIntersecting && !seen.has(entry.target)) {
+									seen.add(entry.target);
+									var el = entry.target;
+									var tgt = el.querySelector('.type-target');
+									if (!tgt) return;
+									typeText(
+										tgt,
+										el.getAttribute('data-text') || '',
+										speedPerChar
+									);
+									io.unobserve(el);
+								}
+							});
+						},
+						{ root: null, rootMargin: triggerEarly, threshold: 0 }
+					);
+
+					headers.forEach(function (h) {
+						io.observe(h);
 					});
+
+					// Observe the "exit room" link too
+					observeExit(io);
 				}
 
-				if (headers.length) {
-					setTimeout(function () {
-						typeSequence(headers, 0);
-					}, initialDelay);
+				// Observe footer "exit room" typing when it scrolls into view
+				function observeExit(io) {
+					var exitTarget = document.querySelector('.return-link .type-target');
+					if (!exitTarget) return;
+
+					var exitWrapper = document.querySelector('.return-link');
+					if (!exitWrapper) return;
+
+					var done = false;
+					function startExit() {
+						if (done) return;
+						done = true;
+						var text = exitTarget.getAttribute('data-text') || '';
+						typeText(exitTarget, text, exitSpeedPerChar);
+					}
+
+					if (io) {
+						io.observe(exitWrapper);
+						// augment the same observer with exit typing
+						var origCB = io.callback || null;
+						io.callback = function (entries, obs) {
+							entries.forEach(function (e) {
+								if (e.target === exitWrapper && e.isIntersecting) startExit();
+							});
+							if (origCB) origCB(entries, obs);
+						};
+					} else {
+						// No IO support, type as fallback
+						startExit();
+					}
 				}
+
+				function typeExitIfPresent() {
+					var exitTarget = document.querySelector('.return-link .type-target');
+					if (!exitTarget) return;
+					var text = exitTarget.getAttribute('data-text') || '';
+					typeText(exitTarget, text, exitSpeedPerChar);
+				}
+
+				// Kick off
+				observeHeaders();
 			})();
 		</script>
 	</body>

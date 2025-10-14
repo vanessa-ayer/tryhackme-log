@@ -53,15 +53,15 @@ body,
 	max-width: 900px;
 }
 
-/* Align blinking cursors and text for title + headers */
+/* keep header text + cursor aligned */
 h1.title .type-target,
-h2.type-header .type-target,
 h1.title .cursor,
+h2.type-header .type-target,
 h2.type-header .cursor {
 	display: inline-block;
 	vertical-align: baseline;
 	position: relative;
-	top: -2px; /* adjust if cursor sits too high or low */
+	top: -2px; /* adjust as needed */
 }
 
 h1,
