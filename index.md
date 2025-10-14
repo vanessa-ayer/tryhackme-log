@@ -3,7 +3,7 @@ layout: default
 title: 'Home'
 ---
 
-<h2>$ mission logs <span class="cursor"></span></h2>
+<h2>$ rooms <span class="cursor"></span></h2>
 
 <ul class="post-list">
   {% for post in site.posts %}
