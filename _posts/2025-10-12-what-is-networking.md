@@ -10,7 +10,9 @@ I wrapped up the room feeling like I just unlocked the first big piece of the pu
 
 Here’s what I learned:
 
-<h2>$ mission brief <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ mission brief">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 Room: [What is Networking?](https://tryhackme.com/room/whatisnetworking)  
 Path: Pre-Security
@@ -18,7 +20,9 @@ Path: Pre-Security
 **Goal:**
 Explore how computers, routers, and other devices communicate to form the networks we use every day.
 
-<h2>$ mission log <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ mission log">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 Networking keeps the digital world alive. Every message, stream, and file is just **data moving between devices** using shared rules (protocols).
 
