@@ -1,5 +1,5 @@
-title: 'TryHackMe Journey Log'
-description: 'Documenting my adventures through virtual machines, puzzles, and the art of cybersecurity.'
+title: 'TryHackMe Log'
+description: 'A terminal-style log documenting my TryHackMe adventures, one room at a time...'
 # theme: jekyll-theme-hacker
 markdown: kramdown
 baseurl: '/tryhackme-log' # because this is a project site
