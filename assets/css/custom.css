@@ -77,42 +77,47 @@ h3 {
 	text-shadow: 0 0 6px rgba(0, 255, 0, 0.08);
 }
 
-/* pre,
-code {
-	background: #000;
-	color: var(--accent);
-	border: 1px solid rgba(0, 255, 0, 0.04);
-	padding: 8px;
-	border-radius: 6px;
-	overflow-x: auto;
-} */
+/* --- Code styling: inline and fenced --- */
 
-pre,
+/* Inline code (e.g., `ping 8.8.8.8`) */
 code {
-	background: #161b22; /* softer code panel background */
+	background: #161b22;
 	color: var(--accent);
 	border: 1px solid rgba(0, 255, 0, 0.08);
-	padding: 8px 10px;
-	border-radius: 6px;
-	overflow-x: auto;
-	box-shadow: 0 0 10px rgba(0, 255, 153, 0.08); /* faint glow */
+	padding: 2px 4px;
+	border-radius: 4px;
+	box-shadow: 0 0 6px rgba(0, 255, 153, 0.06);
 }
 
-/* --- Terminal glow for code + bullet blocks --- */
+/* Fenced code blocks (``` ... ```) */
 pre {
+	background: #161b22; /* keep dark panel */
 	color: var(--accent);
-	background: rgba(0, 255, 0, 0.05);
+	border: 1px solid rgba(0, 255, 0, 0.08);
+	padding: 10px 12px 10px 26px; /* extra left for prompt arrow */
 	border-radius: 6px;
-	padding: 8px 10px;
-	font-family: 'Source Code Pro', monospace;
-	line-height: 1.5;
 	overflow-x: auto;
+	line-height: 1.5;
+	box-shadow: 0 0 10px rgba(0, 255, 153, 0.08); /* soft glow */
+	position: relative; /* for the ::before prompt */
 }
 
+/* Prompt-style leading arrow inside code blocks */
 pre::before {
 	content: '> ';
 	color: var(--accent);
 	opacity: 0.4;
+	position: absolute;
+	left: 8px;
+}
+
+/* Don’t double-style code inside pre */
+pre code {
+	background: transparent;
+	color: var(--accent);
+	border: 0;
+	padding: 0;
+	box-shadow: none;
 }
 
 /* --- homepage post list: terminal vibe --- */
@@ -210,11 +215,6 @@ a:hover {
 	margin-top: 40px;
 	font-family: 'Source Code Pro', monospace;
 	white-space: normal; /* preserves spaces like a terminal */
-}
-
-.return-link a {
-	text-decoration: none;
-	color: var(--fg);
 }
 
 .return-link .type-target {
