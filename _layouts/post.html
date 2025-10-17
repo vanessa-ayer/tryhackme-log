@@ -45,8 +45,8 @@
 		<script>
 			(function () {
 				// --- config ---
-				var speedPerChar = 28; // ms per char
-				var triggerEarly = '0px 0px -20% 0px'; // start when 80% into viewport
+				var speedPerChar = 28; // ms per character (typing speed)
+				var triggerEarly = '0px 0px -20% 0px'; // start typing when element is 80% into viewport
 
 				function typeText(target, text, speed, done) {
 					var i = 0;
@@ -57,17 +57,21 @@
 					})();
 				}
 
-				// HEADERS (title + section headers)
+				// -------- Headers (H1 title + H2 section headers) --------
 				var headers = [].slice.call(document.querySelectorAll('.type-header'));
+
 				function observeHeaders() {
+					if (!headers.length) return;
+
+					// Fallback: if IO unsupported, type all immediately
 					if (!('IntersectionObserver' in window)) {
 						headers.forEach(function (h) {
 							var tgt = h.querySelector('.type-target');
 							if (tgt)
 								typeText(tgt, h.getAttribute('data-text') || '', speedPerChar);
 						});
-						// fallback: also type exit link immediately
-						typeExitImmediate();
+						// still type exit link
+						observeExit(true);
 						return;
 					}
 
@@ -79,12 +83,13 @@
 									seen.add(entry.target);
 									var el = entry.target;
 									var tgt = el.querySelector('.type-target');
-									if (tgt)
+									if (tgt) {
 										typeText(
 											tgt,
 											el.getAttribute('data-text') || '',
 											speedPerChar
 										);
+									}
 									ioHeaders.unobserve(el);
 								}
 							});
@@ -97,51 +102,63 @@
 					});
 				}
 
-				// EXIT LINK (use its own, separate observer)
-				function observeExit() {
+				// -------- Exit link (< exit room >) --------
+				function observeExit(forceImmediate) {
 					var exitWrapper = document.querySelector('.return-link');
 					var exitTarget = document.querySelector('.return-link .type-target');
 					if (!exitWrapper || !exitTarget) return;
 
-					if (!('IntersectionObserver' in window)) {
-						typeExitImmediate();
+					var text = exitTarget.getAttribute('data-text') || '';
+					var started = false;
+
+					function startExit() {
+						if (started) return;
+						started = true;
+						typeText(exitTarget, text, speedPerChar);
+					}
+
+					function inView(el) {
+						var r = el.getBoundingClientRect();
+						return r.top < window.innerHeight && r.bottom > 0;
+					}
+
+					// If asked or already visible on load → type now
+					if (forceImmediate || inView(exitWrapper)) {
+						startExit();
 						return;
 					}
 
-					var typed = false;
-					var ioExit = new IntersectionObserver(
-						function (entries) {
-							entries.forEach(function (e) {
-								if (e.target === exitWrapper && e.isIntersecting && !typed) {
-									typed = true;
-									typeText(
-										exitTarget,
-										exitTarget.getAttribute('data-text') || '',
-										speedPerChar
-									);
-									ioExit.unobserve(exitWrapper);
-								}
-							});
-						},
-						{ root: null, rootMargin: triggerEarly, threshold: 0 }
-					);
+					// Best case: IntersectionObserver
+					if ('IntersectionObserver' in window) {
+						var io = new IntersectionObserver(
+							function (entries) {
+								entries.forEach(function (e) {
+									if (e.target === exitWrapper && e.isIntersecting) {
+										startExit();
+										io.unobserve(exitWrapper);
+									}
+								});
+							},
+							{ root: null, rootMargin: triggerEarly, threshold: 0 }
+						);
+						io.observe(exitWrapper);
+					}
 
-					ioExit.observe(exitWrapper);
+					// Fallback: scroll/resize listener
+					function onScroll() {
+						if (!started && inView(exitWrapper)) {
+							startExit();
+							window.removeEventListener('scroll', onScroll, { passive: true });
+							window.removeEventListener('resize', onScroll);
+						}
+					}
+					window.addEventListener('scroll', onScroll, { passive: true });
+					window.addEventListener('resize', onScroll);
 				}
 
-				function typeExitImmediate() {
-					var exitTarget = document.querySelector('.return-link .type-target');
-					if (!exitTarget) return;
-					typeText(
-						exitTarget,
-						exitTarget.getAttribute('data-text') || '',
-						speedPerChar
-					);
-				}
-
-				// Kick off observers
+				// Kick off
 				observeHeaders();
-				observeExit();
+				observeExit(false);
 			})();
 		</script>
 	</body>
