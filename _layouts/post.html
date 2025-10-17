@@ -11,8 +11,17 @@
 	</head>
 	<body>
 		<div class="site">
-			<!-- XP bar only (no site title/description) -->
-			<header class="site-header">{% include xpbar.html %}</header>
+			<header class="site-header post-top">
+				<h2 class="home-link">
+					<a
+						href="{{ site.baseurl }}/"
+						aria-label="Return to TryHackMe Log home"
+					>
+						&lt; TryHackMe Room Log
+					</a>
+				</h2>
+				{% include xpbar.html %}
+			</header>
 
 			<main class="site-content">
 				<h1 class="type-header title" data-text="{{ page.title }}">
