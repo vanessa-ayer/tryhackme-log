@@ -1,9 +1,11 @@
 ---
 layout: default
-title: 'Home'
+title: 'Rooms'
 ---
 
-<h2>$ rooms <span class="cursor"></span></h2>
+<h2 class="type-header" data-text="$ rooms">
+  <span class="type-target"></span><span class="cursor"></span>
+</h2>
 
 <ul class="post-list">
   {% for post in site.posts %}
