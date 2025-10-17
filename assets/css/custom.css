@@ -1,9 +1,15 @@
 :root {
+	--bg: #0d1117; /* softer navy-black */
+	--fg: #c9fdd7; /* slightly lighter mint text */
+	--accent: #9efc9e; /* refined terminal green */
+	--muted: #7fbf7f; /* keep your muted green tone */
+}
+/* :root {
 	--bg: #000;
 	--fg: #c7f1b0;
 	--accent: #9cff6b;
 	--muted: #7fbf7f;
-}
+} */
 body,
 .site {
 	background: var(--bg);
@@ -71,7 +77,7 @@ h3 {
 	text-shadow: 0 0 6px rgba(0, 255, 0, 0.08);
 }
 
-pre,
+/* pre,
 code {
 	background: #000;
 	color: var(--accent);
@@ -79,6 +85,17 @@ code {
 	padding: 8px;
 	border-radius: 6px;
 	overflow-x: auto;
+} */
+
+pre,
+code {
+	background: #161b22; /* softer code panel background */
+	color: var(--accent);
+	border: 1px solid rgba(0, 255, 0, 0.08);
+	padding: 8px 10px;
+	border-radius: 6px;
+	overflow-x: auto;
+	box-shadow: 0 0 10px rgba(0, 255, 153, 0.08); /* faint glow */
 }
 
 /* --- Terminal glow for code + bullet blocks --- */
@@ -132,6 +149,15 @@ pre::before {
 	color: var(--accent);
 	border-bottom: 1px solid var(--accent);
 	text-shadow: 0 0 6px rgba(0, 255, 0, 0.18);
+}
+
+a {
+	color: var(--fg);
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+a:hover {
+	color: var(--accent);
+	text-shadow: 0 0 6px var(--accent);
 }
 
 .post-list small {
@@ -214,6 +240,12 @@ pre::before {
 	animation: blink 1s steps(2, start) infinite;
 	vertical-align: bottom;
 }
+
+::selection {
+	background-color: var(--accent);
+	color: #0d1117;
+}
+
 @keyframes blink {
 	50% {
 		opacity: 0;
