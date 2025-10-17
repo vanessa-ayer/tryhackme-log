@@ -2,6 +2,8 @@
 
 Retro terminal blog documenting my TryHackMe journey.
 
+<img width="100" height="100" alt="Copy of frame (1)" src="https://github.com/user-attachments/assets/cdc078c8-fffc-4791-a3c4-4e899f295216" />
+
 ![Quickstart](https://img.shields.io/badge/Quickstart-000000?style=for-the-badge&labelColor=00ff00)
 
 - Edit posts in `_posts/`
