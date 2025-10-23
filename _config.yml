@@ -10,7 +10,7 @@ author: ''
 # TryHackMe metadata (edit these as you progress)
 thm:
   rank: 'Pathfinder' # your current rank
-  points: 650 # total points
+  points: 380 # total points
   next_rank: 'Seeker' # next rank label
   progress_pct: 35 # 0–100 progress to the next rank
 
