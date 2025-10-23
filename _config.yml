@@ -7,3 +7,10 @@ baseurl: '/tryhackme-log' # because this is a project site
 url: 'https://vanessa-ayer.github.io'
 show_excerpts: false
 author: ''
+# TryHackMe metadata (edit these as you progress)
+thm:
+  rank: 'Script Kiddie' # your current rank text
+  rooms completed: 12 # your current completed rooms
+  next_rank: 'Hacker' # what you’re aiming for
+  progress_pct: 35 # % toward the next rank (0–100)
+

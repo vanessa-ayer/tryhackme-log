@@ -298,3 +298,54 @@ a:hover {
 	padding: 10px 12px;
 	margin: 8px 0 16px;
 }
+
+/* ==== TryHackMe Rank Bar ==== */
+.rankbar {
+	background: #07120a;
+	border: 1px solid rgba(0, 255, 0, 0.08);
+	border-radius: 6px;
+	padding: 10px 12px;
+	max-width: 460px;
+	margin: 10px auto 16px;
+}
+
+.rank-meta {
+	font-family: 'Source Code Pro', Consolas, monospace;
+	font-size: 13px;
+	color: var(--muted);
+	margin-bottom: 8px;
+}
+
+.rank-meta strong {
+	color: var(--accent);
+}
+
+.rank-meta .sep {
+	opacity: 0.6;
+	margin: 0 6px;
+}
+
+.rank-track {
+	height: 10px;
+	background: #001100;
+	border-radius: 6px;
+	overflow: hidden;
+	border: 1px solid rgba(0, 255, 0, 0.08);
+}
+
+.rank-fill {
+	height: 100%;
+	background: linear-gradient(90deg, var(--accent), #66ff44);
+	box-shadow: 0 0 10px rgba(0, 255, 153, 0.25);
+	transition: width 600ms ease;
+}
+
+.rank-scale {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Source Code Pro', Consolas, monospace;
+	font-size: 11px;
+	color: var(--muted);
+	margin-top: 6px;
+	opacity: 0.85;
+}

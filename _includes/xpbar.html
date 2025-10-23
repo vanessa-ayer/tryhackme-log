@@ -1,0 +1,22 @@
+<div class="rankbar">
+	<div class="rank-meta">
+		🛡️ Rank: <strong>{{ site.thm.rank }}</strong>
+		<span class="sep">•</span>
+		{{ site.thm.points }} pts
+		<span class="sep">→</span>
+		Next: {{ site.thm.next_rank }}
+	</div>
+
+	<div class="rank-track" aria-label="Progress toward next rank">
+		<div
+			class="rank-fill"
+			style="width: {{ site.thm.progress_pct | default: 0 }}%"
+		></div>
+	</div>
+
+	<div class="rank-scale">
+		<span>0%</span>
+		<span>{{ site.thm.progress_pct | default: 0 }}%</span>
+		<span>100%</span>
+	</div>
+</div>
