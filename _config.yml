@@ -2,6 +2,7 @@ title: 'TryHackMe Room Log'
 description: 'A retro terminal-style log documenting my TryHackMe adventures, one room at a time...'
 # theme: jekyll-theme-hacker
 markdown: kramdown
+design_mode: true
 baseurl: '/tryhackme-log' # because this is a project site
 url: 'https://vanessa-ayer.github.io'
 show_excerpts: false

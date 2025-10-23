@@ -13,15 +13,18 @@
 		<div class="site">
 			<header class="site-header post-top">
 				<h2 class="home-link">
-					<a
-						href="{{ site.baseurl }}/"
-						aria-label="Return to TryHackMe Log home"
-					>
-						&lt; TryHackMe Room Log
+					<a href="{{ site.baseurl }}/" aria-label="Return to Theme Demo home">
+						&lt; TryHackMe Theme Demo
 					</a>
 				</h2>
-				{% include xpbar.html %}
 			</header>
+
+			{% if site.design_mode %}
+			<p class="demo-banner" role="note">
+				<strong>Demo mode:</strong> This page showcases the theme layout. It’s a
+				design prototype, not an active room log.
+			</p>
+			{% endif %}
 
 			<main class="site-content">
 				<h1 class="type-header title" data-text="{{ page.title }}">
