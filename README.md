@@ -18,6 +18,11 @@ Key highlights:
 -  Soft terminal dark theme with neon glow  
 -  Built entirely with HTML, CSS, and Jekyll (no frameworks)
 
+-  ![BuiltWith](https://img.shields.io/badge/Built_with-Jekyll-000000?style=for-the-badge&labelColor=ffffff)
+
+---
+
+
 
 
 
