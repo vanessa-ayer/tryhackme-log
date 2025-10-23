@@ -1,6 +1,6 @@
 # tryhackme-log
 
-> A fun retro terminal-style Jekyll theme inspired by TryHackMe missions (now serving as a **design demo** for cybersecurity blogs.)  
+> A fun retro terminal-style Jekyll theme inspired by TryHackMe rooms (now serving as a **design demo** for a cybersecurity blog)  
 
 <img width="125" height="125" alt="Terminal preview icon" src="https://github.com/user-attachments/assets/7aa2038f-e912-42c6-932b-8e7f3429cfb2" />
 
