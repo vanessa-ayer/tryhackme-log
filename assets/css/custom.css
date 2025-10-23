@@ -30,30 +30,7 @@ body,
 	color: var(--muted);
 	margin-top: 6px;
 }
-.xpbar {
-	background: #07120a;
-	border: 1px solid rgba(0, 255, 0, 0.06);
-	padding: 8px;
-	border-radius: 6px;
-	width: 360px;
-	margin: 10px 0;
-}
-.xp-meta {
-	font-family: monospace;
-	font-size: 12px;
-	margin-bottom: 6px;
-	color: var(--muted);
-}
-.xp-track {
-	background: #001100;
-	height: 10px;
-	border-radius: 6px;
-}
-.xp-fill {
-	height: 100%;
-	background: linear-gradient(90deg, var(--accent), #66ff44);
-	border-radius: 6px;
-}
+
 .site-content {
 	margin-top: 14px;
 	max-width: 900px;
