@@ -4,12 +4,7 @@
 	--accent: #9efc9e; /* refined terminal green */
 	--muted: #7fbf7f; /* keep your muted green tone */
 }
-/* :root {
-	--bg: #000;
-	--fg: #c7f1b0;
-	--accent: #9cff6b;
-	--muted: #7fbf7f;
-} */
+
 body,
 .site {
 	background: var(--bg);
@@ -20,6 +15,7 @@ body,
 }
 .site-header {
 	margin-bottom: 18px;
+	text-align: left;
 }
 .site-title a {
 	color: var(--accent);
@@ -277,13 +273,16 @@ a:hover {
 }
 
 /* ==== TryHackMe Rank Bar ==== */
+
 .rankbar {
 	background: #07120a;
-	border: 1px solid rgba(0, 255, 0, 0.08);
+	border: 1px solid rgba(0, 255, 0, 0.06);
+	padding: 8px;
 	border-radius: 6px;
-	padding: 10px 12px;
-	max-width: 460px;
-	margin: 10px auto 16px;
+	width: 360px;
+	margin: 10px 0;
+	text-align: left; /* ensure inner text aligns left */
+	margin-left: 0;
 }
 
 .rank-meta {
