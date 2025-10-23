@@ -16,12 +16,7 @@
 					<a href="{{ site.baseurl | prepend: site.url }}">{{ site.title }}</a>
 				</h1>
 				<p class="site-desc">{{ site.description }}</p>
-				<div class="xpbar">
-					<div class="xp-meta">💀 Level 1 — 50 XP / 500 XP</div>
-					<div class="xp-track">
-						<div class="xp-fill" style="width: 10%"></div>
-					</div>
-				</div>
+				{% include xpbar.html %}
 			</header>
 
 			<main class="site-content">
