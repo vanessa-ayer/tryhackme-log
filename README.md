@@ -1,18 +1,26 @@
 # tryhackme-log
 
-Retro terminal blog documenting my TryHackMe journey.
+> A fun retro terminal-style Jekyll theme inspired by TryHackMe missions (now serving as a **design demo** for cybersecurity blogs.)  
 
-<img width="125" height="125" alt="Copy of frame (2)" src="https://github.com/user-attachments/assets/7aa2038f-e912-42c6-932b-8e7f3429cfb2" />
+<img width="125" height="125" alt="Terminal preview icon" src="https://github.com/user-attachments/assets/7aa2038f-e912-42c6-932b-8e7f3429cfb2" />
+
+[![View Demo](https://img.shields.io/badge/View%20Demo-ff3333?style=for-the-badge&labelColor=000000)](https://vanessa-ayer.github.io/tryhackme-log/)
+
+---
+
+![Overview](https://img.shields.io/badge/overview-000000?style=for-the-badge&labelColor=00ff00)
+
+Originally created to track my progress on TryHackMe, but this project has evolved into a **visual design demo** showing how a cybersecurity themed blog can look and feel inside a simulated retro console environment.
+
+Key highlights:  
+-  Animated typing effects on headers and links  
+-  Dynamic **Rank bar** (configurable in `_config.yml`)  
+-  Soft terminal dark theme with neon glow  
+-  Built entirely with HTML, CSS, and Jekyll (no frameworks)
 
 
-![Quickstart](https://img.shields.io/badge/Quickstart-000000?style=for-the-badge&labelColor=00ff00)
 
-- Edit posts in `_posts/`
-- Commit & `git push`
-- GitHub Pages builds automatically
 
-![Structure](https://img.shields.io/badge/Structure-000000?style=for-the-badge&labelColor=00ff00)
 
-- `_posts/` — blog posts (Markdown)
-- `assets/css/custom.css` — terminal styles
-- `_layouts/default.html` — minimal layout override
+
+
